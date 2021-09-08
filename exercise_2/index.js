@@ -59,6 +59,9 @@ app.get("/movies", (req, res) => {
         locals: {
             myMovies: myMovies
         },
+        partials: {
+            img: '/partials/img'
+        }
     })
 });
 
