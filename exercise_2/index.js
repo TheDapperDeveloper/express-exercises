@@ -2,24 +2,25 @@ const PORT = 3001
 const express = require("express")
 const app = express()
 
+app.use(express.static("public"))
 const es6Renderer = require("express-es6-template-engine");
 
 app.engine("html", es6Renderer);
 app.set("views", "templates");
 app.set("view engine", "html");
 
-const cities = [
-    {cityName: "Barcelona", continent: "Europe"},
-    {cityName: "Amsterdam", continent: "Europe"},   
-    {cityName: "Punta Cana", continent: "North America"},    
-    {cityName: "Sydney", continent: "Australia"},    
-    {cityName: "Portugal", continent: "Europe"},    
-    {cityName: "Washington DC", continent: "North America"},    
-    {cityName: "Miami", continent: "North America"},    
-    {cityName: "Phuket", continent: "Asia"},    
-    {cityName: "Bahia", continent: "South America"},    
-    {cityName: "Paris", continent: "Europe"},    
-];
+// const cities = [
+//     {cityName: "Barcelona", continent: "Europe"},
+//     {cityName: "Amsterdam", continent: "Europe"},   
+//     {cityName: "Punta Cana", continent: "North America"},    
+//     {cityName: "Sydney", continent: "Australia"},    
+//     {cityName: "Portugal", continent: "Europe"},    
+//     {cityName: "Washington DC", continent: "North America"},    
+//     {cityName: "Miami", continent: "North America"},    
+//     {cityName: "Phuket", continent: "Asia"},    
+//     {cityName: "Bahia", continent: "South America"},    
+//     {cityName: "Paris", continent: "Europe"},    
+// ];
 
 const myMovies = [
     {movieName: "Skyfall", poster: "https://www.jamesbondlifestyle.com/sites/default/files/ckeditor/images/news/120809-james-bond-daniel-craig-skyfall.jpg"},
@@ -59,11 +60,9 @@ app.get("/movies", (req, res) => {
         locals: {
             myMovies: myMovies
         },
-        partials: {
-            img: '/partials/img'
-        }
     })
 });
+
 
 // ***
 

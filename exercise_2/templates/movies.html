@@ -5,11 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Top 5 Movies</title>
-    ${img}
+    <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
-    <div>${myMovies.map(movie =>` <h3>${movie.movieName}</h3> `).join('')} </div>
-    <div>${myMovies.map(movie =>` <img src="${movie.poster}"></img> `).join('')}</div>
-    
+    <div>${myMovies.map(movie =>` <h3>${movie.movieName}</h3> <img src="${movie.poster}"></img> `).join('')}</div>    
 </body>
 </html>
