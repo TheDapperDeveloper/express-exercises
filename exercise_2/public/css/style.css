@@ -1,4 +1,21 @@
 img {
     height: 400px;
     width: 300px;
+    justify-content: center;
+}
+
+div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h3 {
+    display: flex;
+    color: #145DA0;
+    font-family: 'Allison', cursive;
+    justify-content: center;
+    font-size: xx-large;
+    
 }
